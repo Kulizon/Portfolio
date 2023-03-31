@@ -1,0 +1,51 @@
+@import "./../../../scss/variables";
+
+.types {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $drk-2;
+  position: relative;
+  margin: ($section-vertical-padding + 40px) 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow: initial;
+  
+  > img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    transform: translateY(-99%);
+
+    &:last-of-type {
+      top: initial;
+      bottom: 0;
+      transform: translateY(99%) rotate(180deg);
+    }
+  }
+
+  > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 2rem;
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: $tablet-breakpoint) {
+  .types {
+    > div {
+      grid-template-columns: 1fr;
+      row-gap: 2rem;
+    }
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .types {
+    margin: 20px 0;
+    padding-top: $section-vertical-padding;
+    padding-bottom: $section-vertical-padding;
+  }
+}

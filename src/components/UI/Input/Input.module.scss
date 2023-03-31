@@ -1,0 +1,19 @@
+@import "./../../../scss/variables";
+
+.input {
+  background: $drk-2;
+  border-radius: 5px;
+  padding: 0.65rem 1rem;
+  font-size: 1.1rem;
+  color: $lght-5;
+
+  &::placeholder {
+    color: $drk-5;
+  }
+}
+
+.textarea {
+  resize: vertical;
+  appearance: none;
+  min-height: 150px;
+}

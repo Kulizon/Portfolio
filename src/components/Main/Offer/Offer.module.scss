@@ -1,0 +1,24 @@
+@import "./../../../scss/variables";
+
+.offer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0;
+
+  > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+    row-gap: 3rem;
+  }
+}
+
+@media (max-width: $tablet-breakpoint) {
+  .offer {
+    > div {
+      grid-template-columns: 1fr;
+      row-gap: 3rem;
+    }
+  }
+}

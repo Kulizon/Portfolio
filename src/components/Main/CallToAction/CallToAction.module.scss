@@ -1,0 +1,123 @@
+@import "./../../../scss/variables";
+
+.cta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+  padding-right: 0;
+  padding-left: 0;
+  padding-top: 0;
+
+  &__text {
+    padding-top: $section-vertical-padding;
+    padding-left: $section-horizontal-padding;
+
+    h6 {
+      font-size: 1.1rem;
+      color: $lght-4;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    p {
+      margin: 1.5rem 0;
+      max-width: 450px;
+    }
+
+    > div {
+      display: flex;
+
+      a:first-of-type button {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__image {
+    padding-left: $section-horizontal-padding;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    img:first-of-type {
+      transform: translate(80px, -60px);
+      width: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1;
+      width: 100%;
+    }
+
+    img:last-of-type {
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      padding-top: $section-vertical-padding;
+      padding-right: $section-horizontal-padding;
+    }
+  }
+}
+
+@media (max-width: $tablet-breakpoint) {
+  .cta {
+    grid-template-columns: 1fr;
+    row-gap: $section-vertical-padding;
+
+    &__text {
+      padding-top: $section-vertical-padding;
+      padding-left: $section-horizontal-padding * 0.5;
+      padding-right: $section-horizontal-padding * 0.5;
+    }
+
+    &__image {
+      justify-self: flex-end;
+
+      img:first-of-type {
+        transform: translateX(80px);
+        max-width: 460px;
+      }
+
+      img:last-of-type {
+        width: 450px;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .cta {
+    &__image {
+      justify-self: flex-end;
+
+      img:first-of-type {
+        transform: translate(90px, 0px);
+        max-width: 440px;
+      }
+
+      img:last-of-type {
+        width: 100%;
+        max-width: 400px;
+      }
+    }
+
+    &__text {
+      h1 {
+        font-size: 2.75rem;
+      }
+
+      > div {
+        flex-direction: column;
+
+        button:first-of-type {
+          margin-right: 0;
+          margin-bottom: 0.75rem;
+        }
+      }
+    }
+  }
+}

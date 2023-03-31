@@ -1,0 +1,25 @@
+@import "./../../../../scss/variables";
+
+.card {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 1rem;
+
+  svg {
+    width: 50px;
+    fill: $main;
+  }
+
+  > div {
+    h4 {
+      padding-left: 0.75rem;
+      padding-bottom: 0.5em;
+      border-left: 2px solid $drk-2;
+      font-size: 1.4rem;
+    }
+
+    p {
+      margin-left: 0.75rem;
+    }
+  }
+}

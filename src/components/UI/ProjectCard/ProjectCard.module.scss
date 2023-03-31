@@ -1,0 +1,245 @@
+@import "./../../../scss/variables";
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 200px auto;
+  background: $drk-2;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 0.5rem;
+  height: 100%;
+  transform: none !important;
+  pointer-events: all !important;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    cursor: pointer;
+    transition: 0.3s;
+    filter: brightness(0.85);
+    opacity: 1;
+
+    &:hover {
+      opacity: 0.8;
+      filter: brightness(1);
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+
+    h4 {
+      font-size: 1.3rem;
+    }
+
+    p:not(.card__text__technologies) {
+      span {
+        cursor: pointer;
+        font-weight: $fnt-wght-nrml;
+        transition: 0.15s;
+        color: $lght-3;
+        text-decoration: underline;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+
+    &__technologies {
+      margin: 0.5rem 0 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+
+      span {
+        background: $drk-4;
+        padding: 0.2rem 0.4rem;
+        font-size: 1rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        border-radius: 5px;
+        font-weight: $fnt-wght-nrml;
+      }
+    }
+
+    > div:last-of-type {
+      a:first-of-type button {
+        margin-top: 3rem;
+      }
+
+      a:nth-of-type(2) button {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+@keyframes fadein {
+  from {
+    top: 60%;
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+.highlighted-card {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 90vh;
+  width: 90vw;
+  max-width: 1000px;
+  background: $drk-2;
+  z-index: 100;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 15px;
+  opacity: 0;
+  animation-name: fadein !important;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 0 15px 15px 0;
+    overflow: hidden;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 0 15px 15px 0;
+  }
+
+  .top-container,
+  .bottom-container {
+    padding: 2rem 3rem;
+    position: relative;
+  }
+
+  // icon
+  .top-container > button {
+    border-color: $drk-2;
+    justify-content: flex-start;
+
+    &:hover {
+      background: $drk-2;
+    }
+  }
+
+  h4 {
+    font-size: 2.5rem;
+    margin: 0.5rem 0 1rem;
+  }
+
+  // normal
+  .top-container {
+    > div {
+      button {
+        background: $drk-2;
+        border-color: $drk-2;
+
+        &:hover {
+          background: none;
+        }
+      }
+    }
+
+    a:first-of-type button {
+      margin-right: 1rem;
+    }
+  }
+
+  &__background {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    height: 100%;
+
+    img {
+      transform: translateY(-60px);
+      width: 100%;
+    }
+
+    > div {
+      background: $main;
+      height: 100%;
+    }
+  }
+
+  p:not(.highlighted-card__text__technologies) {
+    margin: 160px 0 3rem;
+  }
+
+  &__text__technologies {
+    @extend .card__text__technologies;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+
+  .bottom-container img {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: $tablet-breakpoint) {
+  .highlighted-card .top-container,
+  .highlighted-card .bottom-container {
+    padding: 2rem 2rem;
+
+    p:not(.highlighted-card__text__technologies) {
+      margin: 100px 0 3rem;
+    }
+  }
+
+  .highlighted-card__background {
+    img {
+      transform: translateY(-30px);
+      width: 100%;
+    }
+  }
+}
+@media (max-width: $mobile-breakpoint) {
+  .card {
+    margin: 0 0.25rem;
+  }
+
+  .highlighted-card__background {
+    img {
+      transform: translateY(-5px);
+      width: 100%;
+    }
+  }
+
+  .highlighted-card .top-container,
+  .highlighted-card .bottom-container {
+    padding: 1rem 1rem;
+
+    h4 {
+      font-size: 2rem;
+      word-break: break-word;
+    }
+
+    p:not(.highlighted-card__text__technologies) {
+      margin: 100px 0 3rem;
+    }
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+  }
+}

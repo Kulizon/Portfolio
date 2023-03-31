@@ -1,0 +1,107 @@
+@import "./../../../scss/variables";
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+  background: $drk-2;
+  position: relative;
+  margin: ($section-vertical-padding + 40px) 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow: initial;
+
+  > img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(-99%);
+    width: 100%;
+
+    &:last-of-type {
+      top: initial;
+      bottom: 0;
+      transform: translateY(99%) rotate(180deg);
+    }
+  }
+
+  &__text {
+    p {
+      a {
+        color: $lght-2;
+      }
+    }
+
+    button {
+      margin-top: 1.5rem;
+    }
+  }
+
+  &__technologies {
+    display: flex;
+    justify-content: center;
+
+    > div:first-of-type {
+      margin-right: 2rem;
+    }
+
+    > div:last-of-type {
+      margin-left: 2rem;
+    }
+
+    img {
+      width: 90px;
+      filter: grayscale(80%);
+      transition: 0.3s;
+
+      &:hover {
+        filter: grayscale(0%);
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet-breakpoint) {
+  .about {
+    grid-template-columns: 1fr;
+    row-gap: $section-vertical-padding;
+
+    &__technologies {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+
+      > div {
+        width: 100%;
+      }
+
+      img {
+        width: 110px;
+      }
+
+      > div:first-of-type {
+        margin-bottom: 1rem;
+        margin-right: 0;
+      }
+
+      > div:last-of-type {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .about {
+    margin: 20px 0;
+    padding-top: $section-vertical-padding;
+    padding-bottom: $section-vertical-padding;
+
+    &__technologies {
+      img {
+        width: 80px;
+      }
+    }
+  }
+}
