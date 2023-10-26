@@ -22,7 +22,7 @@ function App() {
     <div className="app">
       <Routes>
         <Route
-          path="/"
+          path="/Portfolio"
           element={
             <>
               <Menu></Menu>
