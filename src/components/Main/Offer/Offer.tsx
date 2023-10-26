@@ -1,12 +1,13 @@
 import Fade from "react-reveal/Fade";
+import React from "react";
 
 import styles from "./Offer.module.scss";
 
 import OfferContainer from "./OfferContainer/OfferContainer";
-import StarIcon from "../../../assets/icons/offert/StarIcon";
-import PenIcon from "../../../assets/icons/offert/PenIcon";
-import ClockIcon from "../../../assets/icons/offert/ClockIcon";
-import MagnifierIcon from "../../../assets/icons/offert/MagnifierIcon";
+import StarIcon from "../../../assets/icons/offer/StarIcon";
+import PenIcon from "../../../assets/icons/offer/PenIcon";
+import ClockIcon from "../../../assets/icons/offer/ClockIcon";
+import MagnifierIcon from "../../../assets/icons/offer/MagnifierIcon";
 
 const Offer = () => {
   return (

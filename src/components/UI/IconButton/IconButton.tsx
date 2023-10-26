@@ -1,3 +1,6 @@
+
+import React from "react";
+
 import styles from "./IconButton.module.scss";
 
 const IconButton = (props: { icon: any; onClick: () => void }) => {

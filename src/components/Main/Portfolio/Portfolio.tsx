@@ -1,8 +1,9 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import React from "react";
 import Fade from "react-reveal/Fade";
 
 import styles from "./Portfolio.module.scss";
-import "@splidejs/react-splide/css";
+import '@splidejs/react-splide/dist/css/splide.min.css';
 
 // import avers1 from "./../../../assets/images/projects/avers1.webp";
 // import avers2 from "./../../../assets/images/projects/avers2.webp";

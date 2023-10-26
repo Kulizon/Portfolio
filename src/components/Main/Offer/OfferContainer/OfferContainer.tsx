@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import React from "react";
 import styles from "./OfferContainer.module.scss";
 
 const OfferContainer = (props: { icon: ReactElement; title: string; text: string }) => {

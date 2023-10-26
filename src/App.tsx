@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router";
+import React from "react";
 
 import CallToAction from "./components/Main/CallToAction/CallToAction";
 import AboutMe from "./components/Main/AboutMe/AboutMe";

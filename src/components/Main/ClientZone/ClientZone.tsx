@@ -1,4 +1,5 @@
 import Tada from "react-reveal/Tada";
+import React from "react";
 
 import styles from "./ClientZone.module.scss";
 

@@ -1,4 +1,5 @@
 import Fade from "react-reveal/Fade";
+import React from "react";
 
 import styles from "./Advantages.module.scss";
 

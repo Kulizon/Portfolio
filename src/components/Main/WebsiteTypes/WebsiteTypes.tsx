@@ -1,4 +1,5 @@
-import Fade from "react-reveal/Fade";
+import Fade from "react-reveal/Fade"
+import React from "react";;
 
 import styles from "./WebsiteTypes.module.scss";
 import wave from "./../../../assets/images/other/wave.svg";

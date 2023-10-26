@@ -1,5 +1,6 @@
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
+import React from "react";
 import Fade from "react-reveal/Fade";
 
 import styles from "./Contact.module.scss";

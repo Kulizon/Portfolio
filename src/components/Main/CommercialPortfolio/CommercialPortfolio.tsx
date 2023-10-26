@@ -1,5 +1,6 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import Fade from "react-reveal/Fade";
+import React from "react";
 
 import styles from "./CommercialPortfolio.module.scss";
 import "@splidejs/react-splide/css";
